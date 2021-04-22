@@ -1,0 +1,397 @@
+:root {
+  --color-primary: #4d96a9;
+  --color-secondary: #855fb1;
+  --color-dark: #28283d;
+  --color-light: #87879d;
+
+  --color-hover-main: #8fe3f9;
+  --color-hover-secondary: #d9b8ff;
+
+  --color-light-100: #fafafa;
+
+  --ff-redhat: 'Red Hat Display', sans-serif;
+
+  --fs-heavy: 4rem;
+  --fs-med: 2.5rem;
+  --fs-light: 1rem;
+  --fs-body: 1.125rem;
+
+  --lineh-heavy: 4rem;
+  --lineh-med: 2.75rem;
+  --lineh-light: 1.625rem;
+  --lineh-body: 1.625rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--ff-redhat);
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr 30vh;
+  gap: 5em;
+}
+
+.header {
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: 0.5fr 0.85fr 0.5fr;
+  grid-template-rows: 10em 1fr;
+}
+
+.logo-container {
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading__left {
+  grid-row: 2;
+  grid-column: 1/2;
+  transform: translateX(-35px);
+  background: url(/starter-code/assets/desktop/image-hero-left.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.heading__middle {
+  grid-column: 2/3;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  gap: 3em;
+}
+
+.middle__title {
+  font-size: var(--fs-heavy);
+  line-height: var(--lineh-heavy);
+  width: 10ch;
+  font-weight: 900;
+  color: var(--color-dark);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.middle__subtext {
+  font-size: var(--fs-body);
+  width: 45ch;
+}
+
+.middle__buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.btn {
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 1em 2em;
+  border-radius: 2em;
+  font-size: var(--fs-body);
+  line-height: var(--lineh-light);
+  font-weight: 900;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.middle__mainBtn {
+  background: var(--color-primary);
+}
+
+.middle__mainBtn:hover {
+  background: var(--color-hover-main);
+}
+
+.mainBtn__version {
+  color: var(--color-hover-main);
+}
+.middle__subBtn,
+.footerBtn {
+  background: var(--color-secondary);
+}
+
+.middle__subBtn:hover,
+.footerBtn:hover {
+  background: var(--color-hover-secondary);
+}
+.heading__right {
+  grid-column: 3/4;
+  grid-row: 2;
+  transform: translateX(35px);
+  display: flex;
+  justify-content: flex-end;
+  background: url(/starter-code/assets/desktop/image-hero-right.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.meetings {
+  grid-column: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.meetings__hero--images {
+  margin: 5em 0;
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(0.2fr);
+  gap: 1.5em;
+}
+
+.meetings__hero--images img {
+  border-radius: 0.5em;
+}
+
+.woman--videocall {
+  grid-column: 1/2;
+}
+.women--videochatting {
+  grid-column: 2/3;
+}
+.men--meeting {
+  grid-column: 3/4;
+}
+.man--texting {
+  grid-column: 4/5;
+}
+
+.meetings__header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.meetings__overline--title {
+  font-size: var(--fs-body);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: var(--color-primary);
+  margin-bottom: 1em;
+}
+
+.meetings__header--title {
+  width: 15ch;
+  text-align: center;
+  font-size: var(--fs-med);
+  color: var(--color-dark);
+  font-weight: 900;
+  line-height: var(--lineh-med);
+  margin-bottom: 1em;
+}
+
+.meetings__header--subtext {
+  color: var(--color-light);
+  width: 45ch;
+  text-align: center;
+  line-height: var(--lineh-light);
+}
+
+.footer {
+  min-height: 100%;
+  width: 100%;
+  grid-row: 3;
+  grid-column: 1/2;
+  background-image: url(/starter-code/assets/desktop/image-footer.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+  background-color: #4d96a9;
+  background-blend-mode: soft-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__header {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__header--main-text {
+  font-size: var(--fs-med);
+  line-height: var(--lineh-med);
+  width: 15ch;
+  text-align: left;
+  color: var(--color-light-100);
+}
+
+.footer__header--sub-text {
+  font-size: var(--fs-light);
+  color: var(--color-light-100);
+  line-height: var(--lineh-body);
+  width: 30ch;
+  text-align: left;
+  font-weight: 500;
+}
+
+.footerBtn {
+  font-size: var(--fs-light);
+  line-height: var(--lineh-light);
+  height: 50%;
+}
+
+.footerBtn--version {
+  color: var(--color-hover-secondary);
+}
+
+@media (max-width: 1024px) {
+  body {
+    gap: 2em;
+  }
+  .header,
+  .meetings,
+  .footer {
+    width: 100vw;
+  }
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr;
+    gap: 1em;
+  }
+
+  .logo-container {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .heading__left {
+    background: url(/starter-code/assets/tablet/image-hero.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(0px);
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .heading__middle {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    gap: 1em;
+  }
+
+  .middle__title {
+    font-size: 3rem;
+  }
+  .middle__subtext {
+    margin-bottom: 5rem;
+  }
+
+  .heading__right {
+    display: none;
+  }
+
+  .meetings__hero--images {
+    width: 90vw;
+  }
+
+  .footer {
+    padding: 5em 0;
+  }
+
+  .footer__header {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-self: center;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  .footer__header--main-text,
+  .footer__header--sub-text {
+    text-align: center;
+  }
+  .footer__header--sub-text {
+    width: 48ch;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    grid-template-rows: 0.2fr 0.7fr 1fr;
+  }
+  .middle__subtext {
+    width: 30ch;
+  }
+  .middle__buttons {
+    flex-direction: column;
+  }
+
+  .meetings {
+    flex-direction: column;
+  }
+  .meetings__header--title {
+    width: 12ch;
+  }
+  .meetings__header--subtext {
+    padding: 0 3rem;
+    width: 38ch;
+  }
+
+  .meetings__hero--images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .woman--videocall {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .women--videochatting {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .men--meeting {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .man--texting {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .footer {
+    min-height: 100%;
+    background-position: center;
+    background: url(/starter-code/assets/mobile/image-footer.jpg);
+    background-size: cover;
+    background-color: #4d96a9;
+    background-position: center;
+    background-blend-mode: soft-light;
+  }
+
+  .footer__header--sub-text {
+    width: 40ch;
+  }
+}
